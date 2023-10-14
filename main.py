@@ -1,10 +1,12 @@
-from maps import map2
+import maps
 from graph import Graph, Map
+import networkx as nx
 
 def main():
-    m = Map(map=map2)
+    m = Map(map=maps.map0)
     G = Graph(map=m)
     G.make_graph()
+    print(nx.degree(G.mst))
 
     G.drawGraph()
     G.drawMST()
